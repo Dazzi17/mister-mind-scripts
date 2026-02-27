@@ -97,7 +97,7 @@ window.CHAT_WIDGET_CUSTOMIZATIONS = {
 
     const consultationUrl = 'https://lugano.adia.tv/';
     const feedbackUrl = "https://ai-api.original.land/api/feedback/conversation_feedback";
-    let aiChatUrl = "https://ai.original.land/widget/66d082758ac5be7b70894e7d668ce61200be4decde037be5?bot_key=bot_GekXRY0U7FHG9dpHYm5dE0NbMhWbHZxF";
+    let aiChatUrl = "https://ai.original.land/widget/66e421708b070a1da662c498668ce61200be4decde037be5?bot_key=bot_4CdkqGv2b6XEfEHDFkZ9EeNsJFZwqsuH";
 
     const config = {
         chatButton: customizations.chatButton || "↗️",
