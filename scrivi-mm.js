@@ -278,7 +278,7 @@ window.CHAT_WIDGET_CUSTOMIZATIONS = {
     }
 
     /* === MAIN WIDGET === */
-    .original_chat-widget {
+   /* .original_chat-widget {
         display: inline-grid;
         position: fixed;
         top: 50%;
@@ -317,7 +317,7 @@ window.CHAT_WIDGET_CUSTOMIZATIONS = {
         font-size: 12px;
         font-weight: bold;
         margin-top: 10px;
-    }
+    }  */
 
     /* === OVERLAYS AND MODALS === */
     .original_overlay {
@@ -1149,67 +1149,61 @@ window.CHAT_WIDGET_CUSTOMIZATIONS = {
     }
 
     function generateWidgetHTML() {
-        return `
-    <div id="original_chat-widget" class="original_chat-widget">
-        <button id="original_chat-button" class="original_chat-button">
-            ${config.chatButton}
-            <span class="original_chat-badge">Beta</span>
-        </button>
-    </div>
-    <div id="original_overlay" class="original_overlay"></div>
-    <div id="original_popup" class="original_popup">
-        <div class="original_popup-content">
-            <button id="original_close-button" class="original_close-button">&times;</button>
-            ${generateSidebarHTML()}
-            <div class="original_chat-container">
-                <div id="original_loader" class="original_loader"></div>
-                <iframe id="original_chat-iframe" class="original_chat-iframe" frameborder="0" referrerpolicy="origin" allow="microphone *; camera *"></iframe>
-            </div>
-            <div class="original_mobile-nav">
-                <button id="original_mobile-nav-chatbot" class="original_mobile-nav-button original_active">
-                    <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4.91667 8.00004H4.925M8.25 8.00004H8.25833M11.5833 8.00004H11.5917M15.75 8.00004C15.75 11.6819 12.3921 14.6667 8.25 14.6667C6.96728 14.6667 5.75976 14.3805 4.70389 13.8759L0.75 14.6667L1.91249 11.5667C1.1763 10.5353 0.75 9.31194 0.75 8.00004C0.75 4.31814 4.10786 1.33337 8.25 1.33337C12.3921 1.33337 15.75 4.31814 15.75 8.00004Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    ${config.mobileNavChatbotText}
-                </button>
-                <button id="original_mobile-nav-support" class="original_mobile-nav-button">
-                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.60638 6.5C6.06398 5.52901 7.29869 4.83333 8.75004 4.83333C10.591 4.83333 12.0834 5.95262 12.0834 7.33333C12.0834 8.49953 11.0187 9.47923 9.57856 9.7555C9.12657 9.84221 8.75004 10.2064 8.75004 10.6667M8.75 13.1667H8.75833M16.25 9C16.25 13.1421 12.8921 16.5 8.75 16.5C4.60786 16.5 1.25 13.1421 1.25 9C1.25 4.85786 4.60786 1.5 8.75 1.5C12.8921 1.5 16.25 4.85786 16.25 9Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    ${config.mobileNavSupportText}
-                </button>
-            </div>
+    return `
+<div id="original_overlay" class="original_overlay"></div>
+<div id="original_popup" class="original_popup">
+    <div class="original_popup-content">
+        <button id="original_close-button" class="original_close-button">&times;</button>
+        ${generateSidebarHTML()}
+        <div class="original_chat-container">
+            <div id="original_loader" class="original_loader"></div>
+            <iframe id="original_chat-iframe" class="original_chat-iframe" frameborder="0" referrerpolicy="origin" allow="microphone *; camera *"></iframe>
+        </div>
+        <div class="original_mobile-nav">
+            <button id="original_mobile-nav-chatbot" class="original_mobile-nav-button original_active">
+                <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.91667 8.00004H4.925M8.25 8.00004H8.25833M11.5833 8.00004H11.5917M15.75 8.00004C15.75 11.6819 12.3921 14.6667 8.25 14.6667C6.96728 14.6667 5.75976 14.3805 4.70389 13.8759L0.75 14.6667L1.91249 11.5667C1.1763 10.5353 0.75 9.31194 0.75 8.00004C0.75 4.31814 4.10786 1.33337 8.25 1.33337C12.3921 1.33337 15.75 4.31814 15.75 8.00004Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                ${config.mobileNavChatbotText}
+            </button>
+            <button id="original_mobile-nav-support" class="original_mobile-nav-button">
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.60638 6.5C6.06398 5.52901 7.29869 4.83333 8.75004 4.83333C10.591 4.83333 12.0834 5.95262 12.0834 7.33333C12.0834 8.49953 11.0187 9.47923 9.57856 9.7555C9.12657 9.84221 8.75004 10.2064 8.75004 10.6667M8.75 13.1667H8.75833M16.25 9C16.25 13.1421 12.8921 16.5 8.75 16.5C4.60786 16.5 1.25 13.1421 1.25 9C1.25 4.85786 4.60786 1.5 8.75 1.5C12.8921 1.5 16.25 4.85786 16.25 9Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                ${config.mobileNavSupportText}
+            </button>
         </div>
     </div>
-    <div id="original_confirmation-modal" class="original_confirmation-modal">
-        <div class="original_confirmation-title">${config.confirmationText}</div>
-        <div class="original_confirmation-buttons">
-            <button id="original_confirm-close" class="original_confirmation-button original_confirm-close">${config.confirmationButtonText}</button>
-            <button id="original_cancel-close" class="original_confirmation-button original_cancel-close">${config.confirmationCancelButtonText}</button>
+</div>
+<div id="original_confirmation-modal" class="original_confirmation-modal">
+    <div class="original_confirmation-title">${config.confirmationText}</div>
+    <div class="original_confirmation-buttons">
+        <button id="original_confirm-close" class="original_confirmation-button original_confirm-close">${config.confirmationButtonText}</button>
+        <button id="original_cancel-close" class="original_confirmation-button original_cancel-close">${config.confirmationCancelButtonText}</button>
+    </div>
+</div>
+<div id="original_feedback-modal" class="original_feedback-modal">
+    <div class="original_feedback-title">${config.feedbackTitle}</div>
+    <div class="original_feedback-subtitle">${config.feedbackSubtitle}</div>
+    <div class="original_feedback-rating-title">${config.feedbackRatingTitle}</div>
+    <div class="original_star-rating-container">
+        <div class="original_star-rating">
+            <span class="original_star" data-value="1">★</span>
+            <span class="original_star" data-value="2">★</span>
+            <span class="original_star" data-value="3">★</span>
+            <span class="original_star" data-value="4">★</span>
+            <span class="original_star" data-value="5">★</span>
         </div>
     </div>
-    <div id="original_feedback-modal" class="original_feedback-modal">
-        <div class="original_feedback-title">${config.feedbackTitle}</div>
-        <div class="original_feedback-subtitle">${config.feedbackSubtitle}</div>
-        <div class="original_feedback-rating-title">${config.feedbackRatingTitle}</div>
-        <div class="original_star-rating-container">
-            <div class="original_star-rating">
-                <span class="original_star" data-value="1">★</span>
-                <span class="original_star" data-value="2">★</span>
-                <span class="original_star" data-value="3">★</span>
-                <span class="original_star" data-value="4">★</span>
-                <span class="original_star" data-value="5">★</span>
-            </div>
-        </div>
-        <div class="original_feedback-details-label">${config.feedbackDetailsLabel}</div>
-        <textarea class="original_feedback-textarea" placeholder=""></textarea>
-        <div class="original_feedback-buttons">
-            <button id="original_feedback-submit" class="original_feedback-submit" disabled>${config.feedbackSubmitButton}</button>
-            <button id="original_feedback-skip" class="original_feedback-skip">${config.feedbackSkipButton}</button>
-        </div>
+    <div class="original_feedback-details-label">${config.feedbackDetailsLabel}</div>
+    <textarea class="original_feedback-textarea" placeholder=""></textarea>
+    <div class="original_feedback-buttons">
+        <button id="original_feedback-submit" class="original_feedback-submit" disabled>${config.feedbackSubmitButton}</button>
+        <button id="original_feedback-skip" class="original_feedback-skip">${config.feedbackSkipButton}</button>
     </div>
+</div>
 `;
-    }
+}
 
     class ChatWidget {
         constructor() {
@@ -1246,60 +1240,56 @@ window.CHAT_WIDGET_CUSTOMIZATIONS = {
         }
 
         attachEventListeners() {
-            if (this.elements.chatbutton) {
-                this.elements.chatbutton.addEventListener('click', () => this.openIframe(aiChatUrl));
-            }
+    // Bottone del sito Mister Mind
+    const externalButton = document.getElementById('scrivi-mm');
+    if (externalButton) {
+        externalButton.addEventListener('click', () => this.openIframe(aiChatUrl));
+    }
 
-            if (this.elements.overlay) {
-                this.elements.overlay.addEventListener('click', () => this.showConfirmation());
-            }
-            if (this.elements.closebutton) {
-                this.elements.closebutton.addEventListener('click', () => this.showConfirmation());
-            }
-
-            if (this.elements.confirmclose) {
-                this.elements.confirmclose.addEventListener('click', () => this.showFeedback());
-            }
-            if (this.elements.cancelclose) {
-                this.elements.cancelclose.addEventListener('click', () => this.cancelClose());
-            }
-
-            if (this.elements.feedbacksubmit) {
-                this.elements.feedbacksubmit.addEventListener('click', () => this.submitFeedback());
-            }
-            if (this.elements.feedbackskip) {
-                this.elements.feedbackskip.addEventListener('click', () => this.skipFeedback());
-            }
-
-            if (this.elements.stars) {
-                this.elements.stars.forEach(star => {
-                    star.addEventListener('click', (e) => this.handleStarClick(e));
-                    star.addEventListener('mouseover', (e) => this.handleStarHover(e));
-                    star.addEventListener('mouseout', () => this.handleStarHoverOut());
-                });
-            }
-
-            if (this.elements.sidebarWidgets) {
-                this.elements.sidebarWidgets.forEach(widget => {
-                    widget.addEventListener('click', (e) => this.handleSidebarWidgetClick(e));
-                });
-            }
-
-            if (this.elements.mobilenavchatbot) {
-                this.elements.mobilenavchatbot.addEventListener('click', () => this.switchMobileView('chatbot'));
-            }
-            if (this.elements.mobilenavsupport) {
-                this.elements.mobilenavsupport.addEventListener('click', () => this.switchMobileView('support'));
-            }
-
-            if (this.elements.chatiframe) {
-                this.elements.chatiframe.addEventListener('load', () => {
-                    this.hideLoader();
-                    this.injectIframeViewportMeta();
-                });
-            }
-            window.addEventListener('message', (e) => this.handlePostMessage(e));
-        }
+    if (this.elements.overlay) {
+        this.elements.overlay.addEventListener('click', () => this.showConfirmation());
+    }
+    if (this.elements.closebutton) {
+        this.elements.closebutton.addEventListener('click', () => this.showConfirmation());
+    }
+    if (this.elements.confirmclose) {
+        this.elements.confirmclose.addEventListener('click', () => this.showFeedback());
+    }
+    if (this.elements.cancelclose) {
+        this.elements.cancelclose.addEventListener('click', () => this.cancelClose());
+    }
+    if (this.elements.feedbacksubmit) {
+        this.elements.feedbacksubmit.addEventListener('click', () => this.submitFeedback());
+    }
+    if (this.elements.feedbackskip) {
+        this.elements.feedbackskip.addEventListener('click', () => this.skipFeedback());
+    }
+    if (this.elements.stars) {
+        this.elements.stars.forEach(star => {
+            star.addEventListener('click', (e) => this.handleStarClick(e));
+            star.addEventListener('mouseover', (e) => this.handleStarHover(e));
+            star.addEventListener('mouseout', () => this.handleStarHoverOut());
+        });
+    }
+    if (this.elements.sidebarWidgets) {
+        this.elements.sidebarWidgets.forEach(widget => {
+            widget.addEventListener('click', (e) => this.handleSidebarWidgetClick(e));
+        });
+    }
+    if (this.elements.mobilenavchatbot) {
+        this.elements.mobilenavchatbot.addEventListener('click', () => this.switchMobileView('chatbot'));
+    }
+    if (this.elements.mobilenavsupport) {
+        this.elements.mobilenavsupport.addEventListener('click', () => this.switchMobileView('support'));
+    }
+    if (this.elements.chatiframe) {
+        this.elements.chatiframe.addEventListener('load', () => {
+            this.hideLoader();
+            this.injectIframeViewportMeta();
+        });
+    }
+    window.addEventListener('message', (e) => this.handlePostMessage(e));
+}
 
         initAdiaStatusChecking() {
             const sidebar = customizations?.otherParams?.sidebar;
